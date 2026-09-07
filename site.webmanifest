@@ -1,0 +1,19 @@
+{
+  "name": "Rock Click — Metrónomo hard rock",
+  "short_name": "Rock Click",
+  "description": "Metrónomo 4/4 con batería acústica hard rock.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0f13",
+  "theme_color": "#0d0f13",
+  "icons": [
+    {
+      "src": "assets/rock-click-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

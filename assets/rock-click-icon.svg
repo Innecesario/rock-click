@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Rock Click</title>
+  <desc id="desc">Icono de Rock Click con un tambor y dos baquetas</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#303947"/>
+      <stop offset="1" stop-color="#0d0f13"/>
+    </linearGradient>
+    <linearGradient id="drum" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff9a6f"/>
+      <stop offset="1" stop-color="#d9473e"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#background)"/>
+  <path d="M112 126 385 384" fill="none" stroke="#ffd166" stroke-width="25" stroke-linecap="round"/>
+  <path d="m400 126-273 258" fill="none" stroke="#ff765e" stroke-width="25" stroke-linecap="round"/>
+  <path d="M98 259v105c0 48 71 86 158 86s158-38 158-86V259" fill="url(#drum)" stroke="#ffd166" stroke-width="13"/>
+  <ellipse cx="256" cy="259" rx="158" ry="86" fill="#ff765e" stroke="#ffd166" stroke-width="13"/>
+  <ellipse cx="256" cy="259" rx="123" ry="61" fill="#202631" stroke="#ffb16e" stroke-width="9"/>
+  <path d="M170 259h172M256 207v104" stroke="#ff765e" stroke-width="8" stroke-linecap="round" opacity=".72"/>
+  <circle cx="256" cy="259" r="18" fill="#ffd166" filter="url(#glow)"/>
+  <path d="M123 343h266M132 379h248" stroke="#8e2d32" stroke-width="9" stroke-linecap="round" opacity=".75"/>
+</svg>
