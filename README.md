@@ -1,141 +1,148 @@
 # Rock Click
 
-Metrónomo 4/4 con batería acústica de hard rock para practicar ritmo, guitarra, bajo o batería.
+Metrónomo 4/4 con sonido de batería acústica de hard rock para practicar guitarra, bajo, batería o ritmo.
 
-La aplicación funciona directamente en el navegador y utiliza muestras reales del **Salamander Drumkit**, con variaciones de interpretación para que el patrón resulte menos repetitivo.
+Rock Click funciona directamente en el navegador y utiliza muestras reales del **Salamander Drumkit**. El motor combina diferentes tomas, capas de intensidad y pequeñas variaciones de interpretación para que el acompañamiento resulte más natural y menos repetitivo.
 
 ## Funciones
 
 - Tempo entre **60 y 180 BPM**, en pasos de 10 BPM.
-- Compás actual de **4/4**.
+- Compás de **4/4**.
 - Subdivisión en negras o corcheas.
 - Cuenta de entrada opcional de uno o dos compases.
 - Sonido de cuenta de entrada independiente, inspirado en golpes de baquetas.
-- Muestras reales de bombo, caja, charles, toms y platos.
+- Muestras reales de bombo, caja, charles, toms, crash y ride.
 - Selección round-robin y capas de intensidad.
-- Variaciones sutiles de volumen, afinación, paneo y tiempo.
-- Saturación, compresión, compresión paralela y reverb corta para el bus de batería.
+- Variaciones naturales de volumen, afinación, panorama y tiempo.
+- Saturación, compresión, compresión paralela y reverberación corta en la mezcla de batería.
 - Rellenos automáticos cada cuatro compases.
 - Varias familias de rellenos seleccionadas automáticamente para evitar repeticiones consecutivas.
 - Crash ocasional al inicio de algunas frases, independiente de los rellenos.
 - Golpes fantasma suaves de caja.
 - Mezclador con controles de volumen general, batería, bombo, caja, toms y platos/charles.
 - Guardado de preferencias en el almacenamiento local del navegador.
-- Interfaz adaptada a móviles.
-- Atajos de teclado:
-  - `Espacio`: iniciar o detener.
-  - `↑`: subir 10 BPM.
-  - `↓`: bajar 10 BPM.
+- Interfaz adaptada a teléfonos y pantallas pequeñas.
+- Icono propio para el navegador y para añadir la aplicación a la pantalla de inicio.
 - Soporte para foco de teclado, lectores de pantalla y reducción de animaciones.
+
+## Uso
+
+Abre la aplicación en un navegador y pulsa **Iniciar**. En teléfonos, esta primera pulsación permite al navegador activar el audio.
+
+El panel principal muestra:
+
+- El tempo actual.
+- El estado de reproducción.
+- El compás y el pulso actuales.
+- El indicador visual de los cuatro pulsos.
+- El progreso de la frase.
+- El resumen de la configuración activa.
+
+Los controles más habituales están disponibles en **Ajustes rápidos**. El mezclador y las opciones de interpretación se encuentran en **Más controles**.
+
+## Controles
+
+### Ajustes rápidos
+
+- **Tempo:** entre 60 y 180 BPM, en pasos de 10.
+- **Subdivisión:** negras o corcheas.
+- **Cuenta de entrada:** desactivada, un compás o dos compases.
+
+Los rellenos aparecen automáticamente cada cuatro compases y ocupan los pulsos 3 y 4 de la última barra de la frase. El motor escoge distintas variaciones para reducir la monotonía.
+
+### Más controles
+
+- Carácter sonoro: hard rock potente o rock clásico.
+- Volumen general y volumen de batería.
+- Volumen independiente de bombo, caja, toms y platos/charles.
+- Variación natural de la interpretación.
+- Crash ocasional al inicio de algunas frases.
+- Golpes fantasma suaves de caja.
+
+### Atajos de teclado
+
+- `Espacio`: iniciar o detener el metrónomo.
+- `↑`: subir 10 BPM.
+- `↓`: bajar 10 BPM.
 
 ## Uso local
 
-No necesita instalar dependencias para utilizar la aplicación.
-
-La forma más sencilla es abrir `index.html` en un navegador. Sin embargo, para que todos los navegadores sirvan correctamente los archivos FLAC locales, es preferible usar el servidor estático incluido:
+La aplicación no necesita dependencias para utilizarse en un navegador. Para probarla localmente con el servidor incluido, hace falta tener Node.js instalado:
 
 ```bash
 npm.cmd run dev
 ```
 
-Después, abre:
+Después, abre esta dirección:
 
 ```text
 http://127.0.0.1:8000/index.html
 ```
 
-También se puede utilizar `npm run dev` desde macOS o Linux si Node.js está instalado.
+El servidor local es recomendable porque permite cargar correctamente las muestras FLAC desde el navegador.
 
-## Publicar en un repositorio personal de GitHub
+## Audio y muestras
 
-### 1. Crear el repositorio
+La batería utiliza 39 muestras FLAC del **Salamander Drumkit**, correspondientes a bombo, caja, charles, toms, crash y ride.
 
-1. Entra en [GitHub](https://github.com/).
-2. Crea un repositorio nuevo para tu cuenta personal.
-3. Puedes llamarlo, por ejemplo, `rock-click` o `metronomo-hard-rock`.
-4. No es necesario añadir un README desde GitHub, porque este proyecto ya incluye uno.
+El motor de audio incluye:
 
-### 2. Subir los archivos
+- Variación round-robin para alternar tomas.
+- Selección de capas según la intensidad del golpe.
+- Humanización opcional del tiempo, volumen, panorama y afinación.
+- Procesamiento de saturación y compresión para conseguir un sonido más contundente.
+- Reverb corta para integrar la batería.
+- Carga progresiva de las muestras al iniciar la reproducción.
 
-Desde la carpeta raíz del proyecto, ejecuta:
-
-```bash
-git init
-git add index.html package.json serve-preview.cjs README.md SAMPLES-LICENSES.md .gitignore assets/backing/salamander
-git commit -m "Preparar Rock Click para publicación personal"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/NOMBRE_DEL_REPOSITORIO.git
-git push -u origin main
-```
-
-Sustituye `TU_USUARIO` y `NOMBRE_DEL_REPOSITORIO` por los valores de tu cuenta y repositorio.
-
-> Si GitHub te pide autenticación, utiliza el método recomendado por GitHub, como GitHub CLI, un token personal o una clave SSH. No guardes contraseñas dentro de este proyecto.
-
-### 3. Activar GitHub Pages
-
-1. Abre el repositorio en GitHub.
-2. Entra en **Configuración (Settings)**.
-3. Abre la sección **Pages**.
-4. En **Compilación y despliegue (Build and deployment)**, selecciona **Desplegar desde una rama (Deploy from a branch)**.
-5. Selecciona la rama `main` y la carpeta `/ (raíz) (root)`.
-6. Pulsa **Guardar (Save)**.
-7. Espera a que GitHub Pages publique el sitio.
-
-La dirección tendrá normalmente esta forma:
-
-```text
-https://TU_USUARIO.github.io/NOMBRE_DEL_REPOSITORIO/
-```
-
-GitHub Pages sirve `index.html` como página principal y conserva las rutas relativas de las muestras, por lo que la aplicación podrá cargar los archivos de:
-
-```text
-assets/backing/salamander/
-```
-
-## Usarlo desde el móvil
-
-1. Abre la dirección de GitHub Pages desde el teléfono.
-2. Pulsa **Iniciar** para permitir que el navegador active el audio.
-3. Si quieres, añade la página a la pantalla de inicio del móvil.
-4. Ajusta el volumen del teléfono antes de comenzar a practicar.
-
-Los navegadores móviles bloquean el audio que intenta comenzar sin interacción del usuario; por eso la reproducción empieza al pulsar el botón **Iniciar**.
-
-## Licencias y atribución
-
-El código de esta aplicación y las muestras de batería deben considerarse por separado.
-
-Las muestras proceden del **Salamander Drumkit** y se distribuyen bajo la licencia **Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)**. La atribución completa, las fuentes y los enlaces de licencia están disponibles en:
+La atribución completa, las fuentes originales y las condiciones de uso están documentadas en:
 
 - [`SAMPLES-LICENSES.md`](SAMPLES-LICENSES.md)
 - [`assets/backing/salamander/SOURCES.md`](assets/backing/salamander/SOURCES.md)
 
-La aplicación se ha preparado para uso personal y no comercial. La licencia de las muestras sigue siendo la licencia original y no se modifica por incluirlas en este repositorio.
+## Uso desde un teléfono Android
 
-Si en el futuro se distribuye públicamente una versión modificada, hay que conservar la atribución y respetar las condiciones de la licencia CC BY-SA 3.0.
+La aplicación puede utilizarse desde el navegador del teléfono. Para añadirla a la pantalla de inicio:
+
+1. Abre la aplicación en Chrome.
+2. Abre el menú del navegador.
+3. Selecciona **Añadir a pantalla de inicio** o **Instalar aplicación**, según la versión de Chrome.
+4. Confirma la instalación.
+
+El icono se define mediante `site.webmanifest` y `assets/rock-click-icon.svg`. Si el teléfono continúa mostrando el icono anterior después de una actualización, elimina el acceso directo antiguo y vuelve a añadir la aplicación desde la página actualizada.
+
+## Accesibilidad
+
+- Los controles tienen etiquetas y descripciones accesibles.
+- El estado del metrónomo se anuncia mediante regiones para lectores de pantalla.
+- El foco de teclado es visible.
+- Los objetivos táctiles tienen un tamaño cómodo para teléfonos.
+- La información importante no depende únicamente del color.
+- Se respetan las preferencias del sistema para reducir animaciones.
+
+## Preferencias
+
+Los ajustes se guardan en el almacenamiento local del navegador. Esto permite conservar el tempo, la mezcla y las opciones de interpretación entre sesiones en el mismo dispositivo y navegador.
+
+El botón **Restablecer** devuelve los valores principales a su configuración inicial.
+
+## Licencias y atribución
+
+El código de la aplicación y las muestras de batería son elementos independientes.
+
+Las muestras proceden del **Salamander Drumkit** y se distribuyen bajo la licencia **Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)**. La atribución completa y los enlaces de licencia están disponibles en los documentos de fuentes incluidos en el proyecto.
+
+La aplicación está preparada para uso personal y no comercial. La licencia original de las muestras se mantiene y no cambia por incluirlas en este proyecto.
 
 ## Estructura principal
 
 ```text
 .
 ├── index.html                         Aplicación completa
-├── package.json                       Script opcional del servidor local
-├── serve-preview.cjs                  Servidor estático para desarrollo local
-├── README.md                          Esta documentación
+├── site.webmanifest                   Metadatos e icono para instalación móvil
+├── assets/rock-click-icon.svg         Icono de la aplicación
+├── assets/backing/salamander/         Muestras FLAC y fuentes
 ├── SAMPLES-LICENSES.md                Resumen de licencias y atribución
-└── assets/
-    └── backing/
-        └── salamander/                Muestras FLAC y documentación de origen
+├── package.json                       Script opcional del servidor local
+├── serve-preview.cjs                  Servidor estático para uso local
+└── README.md                          Esta documentación
 ```
-
-## Notas para GitHub Pages
-
-- No necesita Node.js para ejecutarse una vez publicado.
-- No necesita base de datos, backend ni variables de entorno.
-- No hay que subir la carpeta `.freebuff`; es configuración interna de Preview y queda excluida mediante `.gitignore`.
-- No hay que subir `node_modules` si se crea localmente.
-- Las rutas de las muestras deben conservarse exactamente.
-- GitHub Pages debe publicar desde la raíz de la rama que contiene `index.html`.
-- Si el audio no empieza en el móvil, pulsa primero **Iniciar** y comprueba que el dispositivo no esté en silencio.
