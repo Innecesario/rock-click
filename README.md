@@ -6,7 +6,7 @@ Rock Click funciona directamente en el navegador y utiliza muestras reales del *
 
 ## Funciones
 
-- Tempo entre **60 y 180 BPM**, en pasos de 10 BPM.
+- Tempo entre **60 y 180 BPM**, en pasos de 5 BPM.
 - Compás de **4/4**.
 - Subdivisión en negras o corcheas.
 - Cuenta de entrada opcional de uno o dos compases.
@@ -44,7 +44,7 @@ Los controles más habituales están disponibles en **Ajustes rápidos**. El mez
 
 ### Ajustes rápidos
 
-- **Tempo:** entre 60 y 180 BPM, en pasos de 10.
+- **Tempo:** entre 60 y 180 BPM, en pasos de 5.
 - **Subdivisión:** negras o corcheas.
 - **Cuenta de entrada:** desactivada, un compás o dos compases.
 
@@ -62,8 +62,8 @@ Los rellenos aparecen automáticamente cada cuatro compases y ocupan los pulsos 
 ### Atajos de teclado
 
 - `Espacio`: iniciar o detener el metrónomo.
-- `↑`: subir 10 BPM.
-- `↓`: bajar 10 BPM.
+- `↑`: subir 5 BPM.
+- `↓`: bajar 5 BPM.
 
 ## Uso local
 
