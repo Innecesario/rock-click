@@ -38,7 +38,7 @@ El panel principal muestra:
 - El progreso de la frase.
 - El resumen de la configuración activa.
 
-Los controles más habituales están disponibles en **Ajustes rápidos**. El mezclador y las opciones de interpretación se encuentran en **Más controles**.
+Los controles más habituales están disponibles en **Ajustes**. El mezclador y las opciones de interpretación se encuentran en **Más controles**.
 
 ## Controles
 
